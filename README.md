@@ -25,5 +25,5 @@ sudo bash -c "$(curl -fsSL https://github.com/dalijolijo/JOLIinsight-docker/raw/
 ```sh
 docker build -t dalijolijo/j_o_l_i-insight-docker .
 docker push dalijolijo/j_o_l_i-insight-docker
-docker run --rm --name j_o_l_i-insight-docker -p 8555:8555 -p 8556:8556 -p 9051:9051 -p 28332:28332 dalijolijo/j_o_l_i-insight-docker
+docker run --rm --name j_o_l_i-insight-docker -p J_O_L_I_DEFAULTPORT:J_O_L_I_DEFAULTPORT -p J_O_L_I_RPCPORT:J_O_L_I_RPCPORT -p J_O_L_I_TORPORT:J_O_L_I_TORPORT -p 28332:28332 -p 3001:3001 dalijolijo/j_o_l_i-insight-docker
 ```

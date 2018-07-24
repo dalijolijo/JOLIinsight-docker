@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2018 The BitCore BTX Core Developers (dalijolijo)
+# Copyright (c) J_O_L_I_YEAR J_O_L_I_TEAM (J_O_L_I_AUTHOR)
 # Script btx-insight-docker.sh
 #set -e
 
@@ -12,25 +12,24 @@ DOCKER_REPO="dalijolijo"
 IMAGE_NAME="j_o_l_i-insight-docker"
 IMAGE_TAG="16.04"
 CONTAINER_NAME="j_o_l_i-insight-docker"
-DEFAULT_PORT="8555"
-RPC_PORT="8556"
-TOR_PORT="9051"
+DEFAULT_PORT="J_O_L_I_DEFAULTPORT"
+RPC_PORT="J_O_L_I_RPCPORT"
+TOR_PORT="J_O_L_I_TORPORT"
 ZMQ_PORT="28332"
 API_PORT="3001"
 WEB="bitcore.cc" # without "https://" and without the last "/" (only HTTPS accepted)
 BOOTSTRAP="bootstrap.tar.gz"
 
-#TODO
 #
 # Color definitions
 #
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NO_COL='\033[0m'
-BTX_COL='\033[1;35m'
-
+JOLI_COL='J_O_L_I_COLOR'
+ 
 clear
-printf "\n\nRUN ${BTX_COL}JOLICOIN (JOLI)${NO_COL} INSIGHT DOCKER SOLUTION\n"
+printf "\n\nRUN ${JOLI_COL}J_O_L_I_COIN (JOLI)${NO_COL} INSIGHT DOCKER SOLUTION\n"
 
 #
 # Docker Installation
@@ -54,9 +53,9 @@ source ./firewall_config.sh ${DEFAULT_PORT} ${RPC_PORT} ${TOR_PORT} ${ZMQ_PORT} 
 rm ./firewall_config.sh
 
 #
-# Run the docker container from BTX Insight Docker Image
+# Run the docker container from JOLI Insight Docker Image
 #
-printf "\nStart ${BTX_COL}BitCore (BTX)${NO_COL} Insight Docker Container"
+printf "\nStart ${JOLI_COL}JoliCoin (JOLI)${NO_COL} Insight Docker Container"
 printf "\n--------------------------------------------\n"
 sudo docker ps | grep ${CONTAINER_NAME} >/dev/null
 if [ $? -eq 0 ]; then
@@ -70,14 +69,14 @@ if [ $? -eq 0 ]; then
     else
         printf "\nDocker Setup Result"
         printf "\n-------------------\n"
-        printf "${RED}Canceled the Docker Setup without starting ${BTX_COL}BitCore (BDS)${NO_COL} Insight Docker Container.${NO_COL}\n\n"
+        printf "${RED}Canceled the Docker Setup without starting ${JOLI_COL}JoliCoin (JOLI)${NO_COL} Insight Docker Container.${NO_COL}\n\n"
         exit 1
     fi
 fi
 docker rm ${CONTAINER_NAME} 2>/dev/null
 
 #
-# Run BTX Insight Docker Container
+# Run JOLI Insight Docker Container
 #
 docker run \
  --rm \
@@ -97,15 +96,15 @@ docker run \
 #
 sleep 5
 clear
-printf "\n${BTX_COL}BitCore (BTX)${GREEN} Insight Docker Solution${NO_COL}\n"
+printf "\n${JOLI_COL}JoliCoin (JOLI)${GREEN} Insight Docker Solution${NO_COL}\n"
 sudo docker ps | grep ${CONTAINER_NAME} >/dev/null
 if [ $? -ne 0 ];then
     printf "${RED}Sorry! Something went wrong. :(${NO_COL}\n"
 else
-    printf "${GREEN}GREAT! Your ${BTX_COL}BitCore (BTX)${GREEN} Insight Docker is running now! :)${NO_COL}\n"
+    printf "${GREEN}GREAT! Your ${JOLI_COL}JoliCoin (JOLI)${GREEN} Insight Docker is running now! :)${NO_COL}\n"
     printf "\nShow your running Docker Container \'${CONTAINER_NAME}\' with ${GREEN}'docker ps'${NO_COL}\n"
     sudo docker ps | grep ${CONTAINER_NAME}
-    printf "\nJump inside the ${BTX_COL}BitCore (BTX)${NO_COL} Insight Docker Container with ${GREEN}'docker exec -it ${CONTAINER_NAME} bash'${NO_COL}\n"
-    printf "\nCheck Log Output of ${BTX_COL}BitCore (BTX)${NO_COL} Insight with ${GREEN}'docker logs ${CONTAINER_NAME}'${NO_COL}\n"
+    printf "\nJump inside the ${JOLI_COL}JoliCoin (JOLI)${NO_COL} Insight Docker Container with ${GREEN}'docker exec -it ${CONTAINER_NAME} bash'${NO_COL}\n"
+    printf "\nCheck Log Output of ${JOLI_COL}JoliCoin (JOLI)${NO_COL} Insight with ${GREEN}'docker logs ${CONTAINER_NAME}'${NO_COL}\n"
     printf "${GREEN}HAVE FUN!${NO_COL}\n\n"
 fi
