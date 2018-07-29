@@ -115,6 +115,13 @@ RUN cd ${JOLI_NET}/bin/mynode/node_modules && \
     cd ${JOLI_NET}/bin/mynode/node_modules/bitcore-message-joli && \
     npm install save
 
+# Remove duplicate node_module 'bitcore-lib' to prevent startup errors such as:
+#   "More than one instance of bitcore-lib found. Please make sure to require bitcore-lib and check that submodules do
+#   not also include their own bitcore-lib dependency."
+RUN rm -Rf ${JOLI_NET}/bin/mynode/node_modules/bitcore-node-mec/node_modules/bitcore-lib-mec && \
+    rm -Rf ${JOLI_NET}/bin/mynode/node_modules/insight-api-mec/node_modules/bitcore-lib-mec && \
+    rm -Rf ${JOLI_NET}/bin/mynode/node_modules/bitcore-lib-mec
+
 # Install bitcore-lib-joli (not needed: part of another module)
 RUN cd ${JOLI_NET}/bin/mynode/node_modules && \
     git clone https://github.com/${GIT}/bitcore-lib-joli.git && \
@@ -138,13 +145,7 @@ RUN cd ${JOLI_NET}/bin/mynode/node_modules && \
 #    npm install
 # Configuration needed before start
 #RUN npm start
-
-# Remove duplicate node_module 'bitcore-lib' to prevent startup errors such as:
-#   "More than one instance of bitcore-lib found. Please make sure to require bitcore-lib and check that submodules do
-#   not also include their own bitcore-lib dependency."
-RUN rm -Rf cd ${JOLI_NET}/bin/mynode/node_modules/insight-api-mec/node_modules/bitcore-lib-mec
-RUN rm -Rf cd ${JOLI_NET}/bin/mynode/node_modules/bitcore-node-mec/node_modules/bitcore-lib-mec
-#RUN rm -Rf cd ${JOLI_NET}/bin/mynode/node_modules/bitcore-wallet-service/node_modules/bitcore-lib-mec
+#RUN rm -Rf ${JOLI_NET}/bin/mynode/node_modules/bitcore-wallet-service/node_modules/bitcore-lib-mec
 
 # Cleanup
 RUN apt-get -y remove --purge build-essential && \
