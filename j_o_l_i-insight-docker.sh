@@ -8,7 +8,7 @@
 #
 GIT_REPO="dalijolijo"
 GIT_PROJECT="JOLIinsight-docker"
-DOCKER_REPO="dalijolijo"
+DOCKER_REPO="J_O_L_I_DOCKER"
 IMAGE_NAME="j_o_l_i-insight-docker"
 IMAGE_TAG="16.04"
 CONTAINER_NAME="j_o_l_i-insight-docker"
