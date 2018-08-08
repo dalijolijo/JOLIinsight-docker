@@ -1,7 +1,7 @@
 # Copyright (c) J_O_L_I_YEAR J_O_L_I_TEAM (J_O_L_I_AUTHOR)
 
 # Use an official Ubuntu runtime as a parent image
-FROM dalijolijo/crypto-lib-ubuntu:16.04
+FROM J_O_L_I_DOCKER/crypto-lib-ubuntu:16.04
 
 LABEL maintainer="J_O_L_I_TEAM"
 
