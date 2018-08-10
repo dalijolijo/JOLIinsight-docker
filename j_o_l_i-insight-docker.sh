@@ -17,8 +17,8 @@ RPC_PORT="J_O_L_I_RPCPORT"
 TOR_PORT="J_O_L_I_TORPORT"
 ZMQ_PORT="28332"
 API_PORT="3001"
-WEB="bitcore.cc" # without "https://" and without the last "/" (only HTTPS accepted)
-BOOTSTRAP="bootstrap.tar.gz"
+WEB="J_O_L_I_BOOTSTRAP_WEB" # without "https://" and without the last "/" (only HTTPS accepted)
+BOOTSTRAP="J_O_L_I_BOOTSTRAP_FILE"
 
 #
 # Color definitions
