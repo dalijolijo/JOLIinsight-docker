@@ -21,10 +21,10 @@ Login as root, then only run the following script:
 sudo bash -c "$(curl -fsSL https://github.com/dalijolijo/JOLIinsight-docker/raw/master/j_o_l_i-insight-docker.sh)"
 ```
 
-## Add nodes to megacoin.conf
-Modify [addnodes.conf](https://github.com/dalijolijo/JOLIinsight-docker/blob/master/addnodes.conf) and trigger the addnodes.sh script inside the running docker container with:
+## Replace existing jolicoin.conf
+Modify [jolicoin.conf](https://github.com/dalijolijo/JOLIinsight-docker/blob/master/jolicoin.conf) and trigger the new_config.sh script inside the running docker container with:
 ```sh
-docker exec j_o_l_i-insight-docker addnodes.sh
+sudo docker exec j_o_l_i-insight-docker new_config.sh
 ```
 
 ## Build/run (only for docker image development)
