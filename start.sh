@@ -11,7 +11,7 @@ fi
 
 # Create script to downloading new jolicoin.conf and replace the old one
 echo "#!/bin/bash" > /usr/local/bin/new_config.sh
-echo "Downloading new jolicoin.conf and replace the old one. Please wait..." >> /usr/local/bin/new_config.sh
+echo "echo \"Downloading new jolicoin.conf and replace the old one. Please wait...\"" >> /usr/local/bin/new_config.sh
 echo "mv /home/jolicoin/bitcore-livenet/bin/mynode/data/jolicoin.conf /home/jolicoin/bitcore-livenet/bin/mynode/data/jolicoin.conf.bak" >> /usr/local/bin/new_config.sh
 echo "wget https://raw.githubusercontent.com/dalijolijo/JOLIinsight-docker/master/jolicoin.conf -O /home/jolicoin/bitcore-livenet/bin/mynode/data/jolicoin.conf" >> /usr/local/bin/new_config.sh
 echo "supervisorctl restart jolicoind" >> /usr/local/bin/new_config.sh
