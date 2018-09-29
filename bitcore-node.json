@@ -19,7 +19,7 @@
     },
     "insight-ui-joli": {
         "apiPrefix": "api",
-        "routePrefix": ""
+        "routePrefix": "joli"
     }
   }
 }
