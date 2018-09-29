@@ -14,10 +14,10 @@
         "exec": "/home/jolicoin/bitcore-livenet/bin/jolicoind"
       }
     },
-    "insight-api-bitcore": {
+    "insight-api-joli": {
         "routePrefix": "api"
     },
-    "insight-ui-bitcore": {
+    "insight-ui-joli": {
         "apiPrefix": "api",
         "routePrefix": ""
     }
